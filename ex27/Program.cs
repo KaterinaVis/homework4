@@ -4,19 +4,20 @@
 9012 -> 12 */
 
 Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int count = 1;
+int a = Convert.ToInt32(Console.ReadLine());
+
+int[] numbers = new int [a];
+
+int maxindex = a-1;
+int currentindex = 0;
+
 int sum = 0;
-int a = Mod(number);
+int i = numbers[currentindex];
 
-while(a!=0)
+while(i <= numbers[maxindex])
 {
-    sum = sum + a;
+    sum = sum + i;
+    currentindex++;
 }
+
 Console.WriteLine(sum);
-
-
-int Mod(int num)
-{
-    return number%10;
-}
