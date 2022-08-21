@@ -13,14 +13,14 @@ Console.WriteLine($"{number} " + " -> "+ sum);
   int Sum(int number)
   {
     
-    int counter = Convert.ToString(number).Length;
-    int advance = 0;
+    int count = Convert.ToString(number).Length;
+    int a = 0;
     int result = 0;
 
-    for (int i = 0; i < counter; i++)
+    for (int i = 0; i < count; i++)
     {
-      advance = number - number % 10;
-      result = result + (number - advance);
+      a = number - number % 10;
+      result = result + (number - a);
       number = number / 10;
     }
    return result;
