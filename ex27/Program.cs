@@ -3,21 +3,26 @@
 82 -> 10
 9012 -> 12 */
 
+
 Console.Write("Введите число: ");
-int a = Convert.ToInt32(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 
-int[] numbers = new int [a];
+int sum = Sum(number);
+Console.WriteLine($"{number} " + " -> "+ sum);
 
-int maxindex = a-1;
-int currentindex = 0;
+  int Sum(int number)
+  {
+    
+    int counter = Convert.ToString(number).Length;
+    int advance = 0;
+    int result = 0;
 
-int sum = 0;
-int i = numbers[currentindex];
+    for (int i = 0; i < counter; i++)
+    {
+      advance = number - number % 10;
+      result = result + (number - advance);
+      number = number / 10;
+    }
+   return result;
+  }
 
-while(i <= numbers[maxindex])
-{
-    sum = sum + i;
-    currentindex++;
-}
-
-Console.WriteLine(sum);
